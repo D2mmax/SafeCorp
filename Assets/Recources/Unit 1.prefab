@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 3280638110901197763}
   - component: {fileID: 1334623963781706039}
   - component: {fileID: 5410890717264384637}
+  - component: {fileID: 5249586138132085629}
   - component: {fileID: 5231763221995964928}
   m_Layer: 6
   m_Name: Unit 1
@@ -160,13 +161,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc29d62367a00604db4595d581be44d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 8
-  clickable:
+  selectionManager: {fileID: 0}
+  currentTarget: {fileID: 0}
+--- !u!135 &5249586138132085629
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193587630631722418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  selectionManager: {fileID: 0}
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.75
+  m_Center: {x: -0.08, y: 0.27, z: 0}
 --- !u!195 &5231763221995964928
 NavMeshAgent:
   m_ObjectHideFlags: 0

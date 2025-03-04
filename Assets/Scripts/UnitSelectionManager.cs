@@ -61,9 +61,17 @@ public class UnitSelectionManager : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
-                groundMarker.transform.position = hit.point;
-                groundMarker.SetActive(false);
-                groundMarker.SetActive(true);
+                if (hit.collider.CompareTag("Ground"))
+                {
+                   groundMarker.transform.position = hit.point;
+                   groundMarker.SetActive(false);
+                   groundMarker.SetActive(true);
+                }
+                else
+                {
+                    return;
+                }
+                
             }
         }
 

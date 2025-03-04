@@ -31,7 +31,7 @@ public class Unit : MonoBehaviour
         if (GetComponent<CapsuleCollider>() == null)
         {
             CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
-            collider.height = 2f; // Customize height
+            collider.height = 1f; // Customize height
             collider.radius = 0.3f; // Customize radius
             collider.center = Vector3.zero; // Adjust center if necessary
             Debug.Log("CapsuleCollider added to " + gameObject.name);

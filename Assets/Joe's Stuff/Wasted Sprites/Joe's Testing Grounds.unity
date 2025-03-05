@@ -1488,17 +1488,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 
-  weaponType: 4
-  Upgraded: 1
-  dmg: 6
-  dmgRed: 10
-  armorPiercing: 0
-  range: 6
-  attackSpeed: 1
-  speed: 4.8
-  health: 240.00002
+  weaponType: 1
+  Upgraded: 0
+  dmg: 15
+  dmgRed: 3
+  armorPiercing: 2
+  range: 20
+  attackSpeed: 2
+  speed: 5
+  health: 100
   splashDmg: 0
-  melee: 1
+  melee: 0
 --- !u!114 &1771847747
 MonoBehaviour:
   m_ObjectHideFlags: 0

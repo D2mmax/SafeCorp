@@ -17,7 +17,7 @@ public class UnitCounter : MonoBehaviour
     private void UpdateUnitCount()
     {
         int totalUnits = UnitSelectionManager.Instance.allUnitsList.Count; // Counts all units in the scene
-        totalUnitsText.text = "" + totalUnits.ToString("D2");
+        totalUnitsText.text = totalUnits.ToString("D2");
     }
 
     private void UpdateSelectedUnitCount()
@@ -25,7 +25,7 @@ public class UnitCounter : MonoBehaviour
         if (UnitSelectionManager.Instance != null)
         {
             int selectedUnits = UnitSelectionManager.Instance.unitsSelected.Count; // Counts selected units
-            selectedUnitsText.text = "" + selectedUnits.ToString("D2");
+            selectedUnitsText.text = selectedUnits.ToString("D2");
         }
     }
 }

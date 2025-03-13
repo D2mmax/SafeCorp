@@ -1,0 +1,4 @@
+Fuel Script:
+- Tag the fuel with 'Fuel'
+- Left click on the fuel once the game starts
+- Should disappear and increment counter by 1

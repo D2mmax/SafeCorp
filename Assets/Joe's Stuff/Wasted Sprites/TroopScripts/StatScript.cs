@@ -21,13 +21,23 @@ public class StatScript : MonoBehaviour
     [ReadOnly] [SerializeField] public float attackSpeed;
     [ReadOnly] [SerializeField] public float speed;
     [ReadOnly] [SerializeField] public float health;
+    [ReadOnly] [SerializeField] public float price;
     [ReadOnly] [SerializeField] private bool splashDmg = false;
     [ReadOnly] [SerializeField] private bool melee = false;
     
 
     private void Start()
     {
-        GenerateIdentificationNumber();
+        if (gameObject.CompareTag("Unit"))
+        {
+            GenerateIdentificationNumber();
+            Debug.Log(ID);
+        }
+        else if (gameObject.CompareTag("Enemy"))
+        {
+            GenerateBug();
+            Debug.Log($"bang{ID}");
+        }
     }
 
     private void OnValidate()
@@ -124,4 +134,21 @@ public class StatScript : MonoBehaviour
         int digit2 = random.Next(0, 10);
         string ID = $"{randomLetter}{digit1}{digit2}";
     }
-}
+
+    //remember: the only good alien is a dead alien, soldier
+    private void GenerateBug()
+    {
+        System.Random random = new System.Random();
+        string[] bugglyphs;
+        bugglyphs = new string[28]{"!", "?", "<", ">","#", "~", "@", "'",":", ";", "{", "}","[", "]", "+", "=","-", "_", "(", ")","*", "&", "^", "%","£", "¬", "|", "",};
+        string[] glyphsused = new string[3];
+        byte x = 0;
+        while (x < 3)
+        {
+            int shuffle = random.Next(0, 28);
+            glyphsused[x] = bugglyphs[shuffle];
+            x += 1;
+        }
+        string ID = $"{glyphsused[0]}{glyphsused[1]}{glyphsused[2]}";
+    }
+}    

@@ -71,7 +71,7 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, direction, out hit, statScript.range))
         {
-            if (hit.collider.CompareTag("Enemy"))
+            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Unit"))
             {
                 ShootSFX();
                 Debug.Log("HIT");

@@ -8,6 +8,7 @@ TagManager:
   - Recourse
   - Ground
   - Enemy
+  - VIP
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Clickable
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

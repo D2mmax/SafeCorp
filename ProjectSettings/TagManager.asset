@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Enemy
   - VIP
+  - Fuel
   layers:
   - Default
   - TransparentFX

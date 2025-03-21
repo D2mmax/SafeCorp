@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 //THIS WORKS TRUST 
 public class thisworksfornow : MonoBehaviour
@@ -9,6 +11,10 @@ public class thisworksfornow : MonoBehaviour
     private Vector3 targetPosition;
     private bool halt = false; //check for if the player has clicked a valid area 
     private byte x = 1;
+
+    [Header("Scale & Place")]
+    public Transform plane1;
+    private static Vector3 storedLocalPosition;
 
     void Start()
     {
@@ -63,6 +69,10 @@ public class thisworksfornow : MonoBehaviour
                 {
                     halt = true;
                     TPtoTarget();
+
+                    // Store position 
+                    storedLocalPosition = plane1.InverseTransformPoint(hit.point);
+                    Debug.Log("Stored Position: " + storedLocalPosition);
                     return;
                 }
                 else
@@ -71,6 +81,7 @@ public class thisworksfornow : MonoBehaviour
                     return;
                 }
             }
+
         }
     }
 
@@ -97,7 +108,15 @@ public class thisworksfornow : MonoBehaviour
     public void Confirm()
     {
         //1. Zoom in and fade to black
+        
         //2. Load next scene in the build settings
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+
         //3. Rest comes AFTER map has been finalized
     }
      public void GoBack()
@@ -110,5 +129,10 @@ public class thisworksfornow : MonoBehaviour
         halt = false;
         x = 1;
      }
+
+     public static Vector3 GetStoredPosition()
+    {
+        return storedLocalPosition;
+    }
 }
 

@@ -5,9 +5,7 @@ What should be shown to the player:
  
 
 What are the rules:
-Camera Spin Start **
-VIP flash  ***
-Sub Objective flash ****
-If player clicks: Camera moves to Birdseye position, after animation plays enable cursor *****
-Scale & Place Script!
+VIP flash  *** (should have UI detail breakdown)
+Sub Objective flash **** (should have UI detail breakdown)
+If player clicks: enable cursor 
 SOUND EFFECTS FOR JUICE AND FEEL!!!!!!!!!!!!!!!!!!!!

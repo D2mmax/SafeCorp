@@ -84,10 +84,11 @@ public class GunScript : MonoBehaviour
                 {
                     //create an overlap sphere around where the raycast hit
                     //any enemy in overlap sphere apply enemyHealth.OnTakeDamage(statScript.dmg, statScript.armorPiercing, statScript.ID);
+                    ApplySplashDamage(hit.point);
                 }
                 if (statScript.melee == true)
                 {
-                    Knockback();
+                    Knockback(hit);
                 }
             }
         }
@@ -95,7 +96,6 @@ public class GunScript : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Draw turret range in the editor
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, statScript != null ? statScript.range : 0);
     }
@@ -117,10 +117,56 @@ public class GunScript : MonoBehaviour
 
     }
 
-    private void Knockback()
+    private void Knockback(RaycastHit hit)
     {
         //take in raycast hit direction
-        //apply force in opposite direction 
+        //apply force in opposite direction
+        Rigidbody enemyRb = hit.collider.GetComponent<Rigidbody>();
+
+        if (enemyRb != null)
+        {
+            Vector3 knockbackDirection = (hit.collider.transform.position - firePoint.position).normalized;
+            float knockbackForce = 10f;
+            float knockbackPlus; 
+            if (statScript.Upgraded == true)
+            {
+                knockbackPlus = knockbackForce * 2;
+                enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
+            }
+            else
+            {
+                enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
+            } 
+        } 
+    }
+
+    private void ApplySplashDamage(Vector3 explosionPoint)
+    {
+        float explosionRadius = 5f; 
+        float RadiusPlus; 
+        Collider[] hitColliders = Physics.OverlapSphere(explosionPoint, explosionRadius, enemyLayer);
+
+        foreach (Collider collider in hitColliders)
+        {
+            Health enemyHealth = collider.GetComponent<Health>();
+            if (enemyHealth != null)
+            {
+                float distance = Vector3.Distance(explosionPoint, collider.transform.position);
+                if (statScript.Upgraded)
+                {
+                    RadiusPlus = explosionRadius * 2;
+                    float damageMultiplier = Mathf.Clamp01(1 - (distance / RadiusPlus)); 
+                    float finalDamage = statScript.dmg * damageMultiplier;
+                    enemyHealth.OnTakeDamage(finalDamage, statScript.armorPiercing, statScript.ID);
+                }
+                else
+                {
+                    float damageMultiplier = Mathf.Clamp01(1 - (distance / explosionRadius)); 
+                    float finalDamage = statScript.dmg * damageMultiplier;
+                    enemyHealth.OnTakeDamage(finalDamage, statScript.armorPiercing, statScript.ID);
+                }
+            }
+        }
     }
 }
 

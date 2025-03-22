@@ -15,15 +15,16 @@ public class StatScript : MonoBehaviour
     [Header("Stats")] //stats below (unserialize later)
     [Header("-----------------------------------------------")]
     [ReadOnly] [SerializeField] public float dmg;
-    [ReadOnly] [SerializeField] public float dmgRed;
+    [ReadOnly] [SerializeField] public float dmgRed; //damage Reduction
     [ReadOnly] [SerializeField] public float armorPiercing;
     [ReadOnly] [SerializeField] public float range;
     [ReadOnly] [SerializeField] public float attackSpeed;
     [ReadOnly] [SerializeField] public float speed;
     [ReadOnly] [SerializeField] public float health;
-    [ReadOnly] [SerializeField] public float price;
-    [ReadOnly] [SerializeField] private bool splashDmg = false;
-    [ReadOnly] [SerializeField] private bool melee = false;
+    [ReadOnly] [SerializeField] public float fuelPrice; //consitant stat
+    [ReadOnly] [SerializeField] public float metalPrice;
+    [ReadOnly] [SerializeField] public bool splashDmg = false;
+    [ReadOnly] [SerializeField] public bool melee = false;
     
 
     private void Start()
@@ -31,12 +32,10 @@ public class StatScript : MonoBehaviour
         if (gameObject.CompareTag("Unit"))
         {
             GenerateIdentificationNumber();
-            Debug.Log(ID);
         }
         else if (gameObject.CompareTag("Enemy"))
         {
             GenerateBug();
-            Debug.Log($"bang{ID}");
         }
     }
 
@@ -57,6 +56,8 @@ public class StatScript : MonoBehaviour
                 attackSpeed = 1.2f;
                 speed = 5f;
                 health = 80f;
+                fuelPrice = 20f;
+                metalPrice = 20f;
                 splashDmg = false;
                 melee = false;
                 break;
@@ -69,6 +70,8 @@ public class StatScript : MonoBehaviour
                 attackSpeed = 2f;
                 speed = 5f;
                 health = 100f;
+                fuelPrice = 20f;
+                metalPrice = 40f;
                 splashDmg = false;
                 melee = false;
                 break;
@@ -81,6 +84,8 @@ public class StatScript : MonoBehaviour
                 attackSpeed = 0.5f;
                 speed = 4f;
                 health = 100f;
+                fuelPrice = 20f;
+                metalPrice = 40f;
                 splashDmg = false;
                 melee = false;
                 break;
@@ -93,6 +98,8 @@ public class StatScript : MonoBehaviour
                 attackSpeed = 0.8f;
                 speed = 3.5f;
                 health = 150f;
+                fuelPrice = 20f;
+                metalPrice = 80f;
                 splashDmg = true;
                 melee = false;
                 break;
@@ -105,6 +112,8 @@ public class StatScript : MonoBehaviour
                 attackSpeed = 1f;
                 speed = 4f;
                 health = 200f;
+                fuelPrice = 20f;
+                metalPrice = 60f;
                 splashDmg = false;
                 melee = true;
                 break;
@@ -132,23 +141,24 @@ public class StatScript : MonoBehaviour
         char randomLetter = (char)('A' + random.Next(0, 26));
         int digit1 = random.Next(0, 10);
         int digit2 = random.Next(0, 10);
-        string ID = $"{randomLetter}{digit1}{digit2}";
+        ID = $"{randomLetter}{digit1}{digit2}";
     }
 
     //remember: the only good alien is a dead alien, soldier
     private void GenerateBug()
     {
         System.Random random = new System.Random();
-        string[] bugglyphs;
-        bugglyphs = new string[28]{"!", "?", "<", ">","#", "~", "@", "'",":", ";", "{", "}","[", "]", "+", "=","-", "_", "(", ")","*", "&", "^", "%","£", "¬", "|", "",};
-        string[] glyphsused = new string[3];
+        string[] bugglyphsNew;
+        bugglyphsNew = new string[9]{"Glor", "Glorb", "Nox", "Quax", "An", "Thwr", "Izx", "Pae", "Lthor"};
+        
+        string[] glyphsused = new string[2];
         byte x = 0;
-        while (x < 3)
+        while (x < 2)
         {
-            int shuffle = random.Next(0, 28);
-            glyphsused[x] = bugglyphs[shuffle];
+            int shuffle = random.Next(0, 8);
+            glyphsused[x] = bugglyphsNew[shuffle];
             x += 1;
         }
-        string ID = $"{glyphsused[0]}{glyphsused[1]}{glyphsused[2]}";
+        ID = $"{glyphsused[0]}{glyphsused[1]}";
     }
 }    

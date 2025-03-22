@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float hp; 
     private float damageReduction;
+    private string personalID;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Health : MonoBehaviour
 
         hp = statScript.health;
         damageReduction = statScript.dmgRed;
+        personalID = statScript.ID;
 
     }
 
@@ -38,13 +40,13 @@ public class Health : MonoBehaviour
         {
             Armor = 0;
             hp = hp - dmg;
-            Debug.Log($"{ID} hit {gameObject.name} for {dmg} damage!");
+            Debug.Log($"Guard {ID} hit Alien {personalID} for {dmg} damage!");
         }
         else 
         {
             float DealtDmg = dmg - Armor;
             hp = hp - DealtDmg;
-            Debug.Log($"{ID} hit {gameObject.name} for {DealtDmg} damage!");
+            Debug.Log($"Guard {ID} hit {personalID} for {DealtDmg} damage!");
         }
 
         if (hp <= 0)

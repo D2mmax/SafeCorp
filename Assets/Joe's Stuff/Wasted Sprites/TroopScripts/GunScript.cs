@@ -80,6 +80,15 @@ public class GunScript : MonoBehaviour
                 {
                     enemyHealth.OnTakeDamage(statScript.dmg, statScript.armorPiercing, statScript.ID);
                 }
+                if (statScript.splashDmg == true)
+                {
+                    //create an overlap sphere around where the raycast hit
+                    //any enemy in overlap sphere apply enemyHealth.OnTakeDamage(statScript.dmg, statScript.armorPiercing, statScript.ID);
+                }
+                if (statScript.melee == true)
+                {
+                    Knockback();
+                }
             }
         }
     }
@@ -106,6 +115,12 @@ public class GunScript : MonoBehaviour
             Debug.LogWarning("AudioSource or AudioClip is missing!");
         }    
 
+    }
+
+    private void Knockback()
+    {
+        //take in raycast hit direction
+        //apply force in opposite direction 
     }
 }
 

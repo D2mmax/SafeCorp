@@ -10,10 +10,9 @@ public class InstantiateDropship : MonoBehaviour
     {
         // Retrieve stored position
         Vector3 storedLocalPosition = thisworksfornow.GetStoredPosition();
-        Vector3 newLocalPosition = storedLocalPosition * scaleFactor;
-        Vector3 spawnPosition = plane2.TransformPoint(newLocalPosition);
-
-        Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+        Debug.Log("Please be the same" + storedLocalPosition);
+        Instantiate(objectToSpawn, storedLocalPosition * scaleFactor, Quaternion.identity);
     }
+    
 }
 

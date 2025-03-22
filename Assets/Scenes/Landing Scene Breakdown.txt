@@ -4,8 +4,8 @@ What should be shown to the player:
 3. 2 subobjectives
  
 
-What are the rules:
-VIP flash  *** (should have UI detail breakdown)
+What is still needed:
 Sub Objective flash **** (should have UI detail breakdown)
-If player clicks: enable cursor 
+Scale for placing
+Confirm sends you forward
 SOUND EFFECTS FOR JUICE AND FEEL!!!!!!!!!!!!!!!!!!!!

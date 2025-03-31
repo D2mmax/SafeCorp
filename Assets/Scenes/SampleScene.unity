@@ -5717,6 +5717,7 @@ GameObject:
   - component: {fileID: 787297890}
   - component: {fileID: 787297892}
   - component: {fileID: 787297891}
+  - component: {fileID: 787297893}
   m_Layer: 5
   m_Name: TroopBuy
   m_TagString: Untagged
@@ -5788,6 +5789,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787297889}
   m_CullTransparentMesh: 1
+--- !u!114 &787297893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787297889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b346eae200adc8046becd7be0215be26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  togglePairs:
+  - objectToDisable: {fileID: 471903223}
+    objectToEnable: {fileID: 1921889983}
+    toggleButton: {fileID: 273847413}
+  - objectToDisable: {fileID: 471903223}
+    objectToEnable: {fileID: 706460677}
+    toggleButton: {fileID: 45593689}
+  - objectToDisable: {fileID: 1921889983}
+    objectToEnable: {fileID: 1024320466}
+    toggleButton: {fileID: 621558921}
+  - objectToDisable: {fileID: 1921889983}
+    objectToEnable: {fileID: 471903223}
+    toggleButton: {fileID: 604152675}
+  - objectToDisable: {fileID: 1024320466}
+    objectToEnable: {fileID: 1130682882}
+    toggleButton: {fileID: 1409778679}
+  - objectToDisable: {fileID: 1024320466}
+    objectToEnable: {fileID: 1921889983}
+    toggleButton: {fileID: 2140457227}
+  - objectToDisable: {fileID: 1130682882}
+    objectToEnable: {fileID: 706460677}
+    toggleButton: {fileID: 459566598}
+  - objectToDisable: {fileID: 1130682882}
+    objectToEnable: {fileID: 1024320466}
+    toggleButton: {fileID: 501200506}
+  - objectToDisable: {fileID: 706460677}
+    objectToEnable: {fileID: 471903223}
+    toggleButton: {fileID: 1149004780}
+  - objectToDisable: {fileID: 706460677}
+    objectToEnable: {fileID: 1130682882}
+    toggleButton: {fileID: 1791697597}
 --- !u!1 &818991095
 GameObject:
   m_ObjectHideFlags: 0

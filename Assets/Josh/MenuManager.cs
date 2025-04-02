@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public TogglePair[] togglePairs; // Array for multiple toggle groups
+    public GameObject menuObject; // Assign in Inspector (Menu to toggle with Tab)
 
     private void Start()
     {
@@ -28,6 +29,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && menuObject != null)
+        {
+            ToggleMenu();
+        }
+    }
+
     private void ToggleObjects(TogglePair pair)
     {
         if (pair.objectToDisable != null && pair.objectToEnable != null)
@@ -38,5 +47,10 @@ public class MenuManager : MonoBehaviour
             pair.objectToDisable.SetActive(!isCurrentlyActive);
             pair.objectToEnable.SetActive(isCurrentlyActive);
         }
+    }
+
+    private void ToggleMenu()
+    {
+        menuObject.SetActive(!menuObject.activeSelf);
     }
 }

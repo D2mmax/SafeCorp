@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3f0927f05fde2e24cb5c8ef4ed6a6807, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5812227818692628079, guid: 3f0927f05fde2e24cb5c8ef4ed6a6807, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1993,47 +1993,51 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: dmg
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: melee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: range
-      value: 6
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: speed
-      value: 4.8
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: dmgRed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: health
-      value: 240.00002
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: Upgraded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
+      propertyPath: splashDmg
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: metalPrice
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: weaponType
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: attackSpeed
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3336780203782634581, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: armorPiercing
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3404207878979015008, guid: adb1e060a2dac10439ba6ed98ebd767e, type: 3}
       propertyPath: m_Layer
@@ -2150,7 +2154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387200371576373418, guid: fa1806291df8950408f82a88ff8f8def, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

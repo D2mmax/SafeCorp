@@ -36,7 +36,7 @@ public class UnitMovement : MonoBehaviour
         {
             GameObject clickedObject = hit.collider.gameObject;
 
-            // Check if clicked object is an enemy or resource
+            
             
             if (((1 << clickedObject.layer) & LayerMask.GetMask("Ground")) != 0) // If clicked on ground
             {

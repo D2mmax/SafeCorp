@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TargetSelectionManager : MonoBehaviour
@@ -29,6 +30,7 @@ public class TargetSelectionManager : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Recourse"))
                 {
                     AssignTarget(hit.collider.gameObject);
+                    Console.WriteLine("clicked on" + hit.collider.tag);
                 }
             }
         }

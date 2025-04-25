@@ -8,6 +8,7 @@ public class UnitMovement : MonoBehaviour
     private Camera cam;
     private NavMeshAgent agent;
     private Animator animator;
+    private UnitGathering unitGathering;
     
    
     public UnitSelectionManager selectionManager;
@@ -22,6 +23,7 @@ public class UnitMovement : MonoBehaviour
         if (selectionManager == null)
         {
             selectionManager = FindObjectOfType<UnitSelectionManager>();  // Find it if not assigned
+            unitGathering = GetComponent<UnitGathering>();
         }
     }
 
@@ -58,11 +60,18 @@ private void FollowTarget(GameObject currentTarget)
 {
     if (currentTarget == null) return;
 
-    NavMeshAgent unitAgent = GetComponent<NavMeshAgent>();
-    Animator unitAnimator = GetComponentInChildren<Animator>();
+    string tag = currentTarget.tag;
 
-    unitAgent.SetDestination(currentTarget.transform.position); // Move towards the target
-    unitAnimator.SetBool("isMoving", true);
+    // Resource target
+    if (tag == "Metal" || tag == "Fuel")
+    {
+        unitGathering.GatherMaterial(currentTarget);
+        return;
+    }
+
+    // Default: enemy or other
+    agent.SetDestination(currentTarget.transform.position);
+    animator.SetBool("isMoving", true);
 }
 
 

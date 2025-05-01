@@ -46,4 +46,19 @@ public class ResourceManager : MonoBehaviour
         }
         return 0; // Return 0 if the resource name is not recognized
     }
+
+    public bool TrySpendResource(string resourceName, int amount)
+    {
+        if (resourceName == "Metal" && metalAmount >= amount)
+        {
+            metalAmount -= amount;
+            return true;
+        }
+        else if (resourceName == "Fuel" && fuelAmount >= amount)
+        {
+            fuelAmount -= amount;
+            return true;
+        }
+        return false;
+    }
 }

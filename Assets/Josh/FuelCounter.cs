@@ -92,8 +92,25 @@ public class FuelCounter : MonoBehaviour
         Destroy(fuelObject); // Remove the fuel object
     }
 
+    public bool TrySpendFuel(int amount)
+    {
+        if (fuelCount >= amount)
+        {
+            fuelCount -= amount;
+            UpdateFuelText();
+            return true;
+        }
+
+        return false;
+    }
+
+    public int GetFuelCount()
+    {
+        return fuelCount;
+    }
+
     private void UpdateFuelText()
     {
-        fuelText.text = fuelCount.ToString("D1"); // Display as single digit (e.g., "3" not "03")
+        fuelText.text = fuelCount.ToString("D1"); // Display as single digit
     }
 }

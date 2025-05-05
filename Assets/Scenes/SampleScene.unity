@@ -3436,7 +3436,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 378357942}
   m_OnClick:
     m_PersistentCalls:
@@ -3695,7 +3695,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 439399927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1689213894}
+        m_TargetAssemblyTypeName: GameObjectSwitcher, Assembly-CSharp
+        m_MethodName: SwitchObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &439399927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6591,7 +6603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787297890
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9942,7 +9954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -915, y: -121}
+  m_AnchoredPosition: {x: -980, y: -184}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577984069
@@ -10574,6 +10586,7 @@ GameObject:
   - component: {fileID: 1689213887}
   - component: {fileID: 1689213886}
   - component: {fileID: 1689213890}
+  - component: {fileID: 1689213894}
   - component: {fileID: 1689213892}
   - component: {fileID: 1689213893}
   m_Layer: 5
@@ -10744,6 +10757,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalText: {fileID: 1577984069}
   fuelText: {fileID: 1925939911}
+--- !u!114 &1689213894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689213885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a99beacee900a499cf00845fc9b6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDisable: {fileID: 2125769142}
+  objectToEnable: {fileID: 787297889}
 --- !u!1 &1701274864
 GameObject:
   m_ObjectHideFlags: 0
@@ -12332,7 +12359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -915, y: -211}
+  m_AnchoredPosition: {x: -980, y: -274}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1984153408

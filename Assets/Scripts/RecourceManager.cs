@@ -4,8 +4,8 @@ public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager Instance;
 
-    private int metalAmount = 0;
-    private int fuelAmount = 0;
+    public int metalAmount = 0;
+    public int fuelAmount = 0;
 
     private void Awake()
     {

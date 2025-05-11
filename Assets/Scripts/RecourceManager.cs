@@ -4,8 +4,8 @@ public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager Instance;
 
-    private int metalAmount = 0;
-    private int fuelAmount = 0;
+    public int metalAmount = 0;
+    public int fuelAmount = 0;
 
     private void Awake()
     {
@@ -45,5 +45,20 @@ public class ResourceManager : MonoBehaviour
             return fuelAmount;
         }
         return 0; // Return 0 if the resource name is not recognized
+    }
+
+    public bool TrySpendResource(string resourceName, int amount)
+    {
+        if (resourceName == "Metal" && metalAmount >= amount)
+        {
+            metalAmount -= amount;
+            return true;
+        }
+        else if (resourceName == "Fuel" && fuelAmount >= amount)
+        {
+            fuelAmount -= amount;
+            return true;
+        }
+        return false;
     }
 }

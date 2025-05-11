@@ -8,6 +8,7 @@ TagManager:
   - Recourse
   - Ground
   - Enemy
+  - VIP
   - Fuel
   - Metal
   layers:
@@ -18,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Clickable
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

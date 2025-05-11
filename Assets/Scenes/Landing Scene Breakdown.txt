@@ -1,0 +1,11 @@
+What should be shown to the player:
+1. VIP location
+2. Areas with high enemy density 
+3. 2 subobjectives
+ 
+
+What is still needed:
+Sub Objective flash **** (should have UI detail breakdown)
+Scale for placing
+Confirm sends you forward
+SOUND EFFECTS FOR JUICE AND FEEL!!!!!!!!!!!!!!!!!!!!

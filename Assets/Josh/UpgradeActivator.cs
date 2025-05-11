@@ -5,8 +5,7 @@ public class UpgradeActivator : MonoBehaviour
 {
     public int metalCost = 50;
     public Button upgradeButton;
-    public StatScript targetStats;  // Reference to the StatScript script
-    //public DisplayStats displayStats;  // Reference to the DisplayStats script
+    public StatScript statScript;  // Reference to the StatScript script
 
     void Start()
     {
@@ -16,13 +15,13 @@ public class UpgradeActivator : MonoBehaviour
 
     void TryUpgrade()
     {
-        if (targetStats == null)
+        if (statScript == null)
         {
             Debug.LogWarning("No StatScript assigned.");
             return;
         }
 
-        if (targetStats.Upgraded)
+        if (statScript.Upgraded)
         {
             Debug.Log("Already upgraded.");
             return;
@@ -34,8 +33,7 @@ public class UpgradeActivator : MonoBehaviour
         {
             // Spend metal and upgrade
             ResourceManager.Instance.AddResource("Metal", -metalCost);
-            targetStats.Upgraded = true;
-            //displayStats.StatRefresh();
+            statScript.Upgraded = true;
             Debug.Log("Unit upgraded!");
 
             // Disable the button

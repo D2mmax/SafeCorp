@@ -4973,7 +4973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalCost: 20
   upgradeButton: {fileID: 299429105}
-  targetStats: {fileID: 250318075}
+  statScript: {fileID: 250318075}
 --- !u!1 &474383198
 GameObject:
   m_ObjectHideFlags: 0
@@ -7799,7 +7799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalCost: 60
   upgradeButton: {fileID: 735277247}
-  targetStats: {fileID: 479861921}
+  statScript: {fileID: 0}
 --- !u!1 &725437639
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,8 +8940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3580d3efe3371cd4f93851228f1d82f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metalAmount: 1000
-  fuelAmount: 1000
+  metalAmount: 0
+  fuelAmount: 0
 --- !u!1 &891928691
 GameObject:
   m_ObjectHideFlags: 0
@@ -10132,7 +10132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalCost: 40
   upgradeButton: {fileID: 1630675848}
-  targetStats: {fileID: 728232486}
+  statScript: {fileID: 0}
 --- !u!1 &1034006859
 GameObject:
   m_ObjectHideFlags: 0
@@ -11316,7 +11316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalCost: 80
   upgradeButton: {fileID: 1772220879}
-  targetStats: {fileID: 1215890974}
+  statScript: {fileID: 0}
 --- !u!1 &1132866141
 GameObject:
   m_ObjectHideFlags: 0
@@ -17359,7 +17359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metalCost: 40
   upgradeButton: {fileID: 185945130}
-  targetStats: {fileID: 1000096870}
+  statScript: {fileID: 0}
 --- !u!1 &1925939910
 GameObject:
   m_ObjectHideFlags: 0

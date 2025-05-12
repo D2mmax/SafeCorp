@@ -7,6 +7,7 @@ public class CameraController1 : MonoBehaviour
     private Animator animator;
     public Renderer[] highenemyAreas; 
     public GameObject Cursor;
+    public AudioSource selct;
     private byte z = 1;
 
     void Start()
@@ -23,6 +24,7 @@ public class CameraController1 : MonoBehaviour
             if (animator != null)
             {
                 animator.SetTrigger("Click1");
+                selct.Play();
             }
 
             foreach (Renderer area in highenemyAreas)

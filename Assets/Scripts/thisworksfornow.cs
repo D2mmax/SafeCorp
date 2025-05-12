@@ -15,12 +15,14 @@ public class thisworksfornow : MonoBehaviour
     [Header("Scale & Place")]
     public Transform plane1;
     private static Vector3 storedLocalPosition;
+    private AudioSource thrrusters;
 
     void Start()
     {
         Vector3 gronker;
         gronker = topCam.transform.position;
         Debug.Log(gronker); 
+        thrrusters = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class thisworksfornow : MonoBehaviour
         else if (halt == true && x > 1)
         {
             //halted
+            thrrusters.Pause();
         }
         else
         {

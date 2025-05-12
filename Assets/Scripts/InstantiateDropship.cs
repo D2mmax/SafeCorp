@@ -4,7 +4,7 @@ public class InstantiateDropship : MonoBehaviour
 {
     public Transform plane2; 
     public GameObject objectToSpawn;
-    public float scaleFactor = 2.0f; // Adjust based on plane size ratio
+    public float scaleFactor = 2.0f; 
 
     void Start()
     {

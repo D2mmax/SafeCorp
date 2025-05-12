@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TargetSelectionManager : MonoBehaviour
@@ -18,21 +19,24 @@ public class TargetSelectionManager : MonoBehaviour
     }
 
     void Update()
+{
+    if (Input.GetMouseButtonDown(1) && UnitSelectionManager.Instance.unitsSelected.Count > 0)
     {
-        if (Input.GetMouseButtonDown(1) && UnitSelectionManager.Instance.unitsSelected.Count > 0)
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, Clickable))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, Clickable))
+        {
+            string tag = hit.collider.tag;
+
+            if (tag == "Enemy" || tag == "Metal" || tag == "Fuel")
             {
-                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Recourse"))
-                {
-                    AssignTarget(hit.collider.gameObject);
-                }
+                AssignTarget(hit.collider.gameObject);
+                Console.WriteLine("Clicked on " + tag);
             }
         }
     }
+}
 
     private void AssignTarget(GameObject newTarget)
     {

@@ -107,16 +107,27 @@ public class UnitSelectionManager : MonoBehaviour
     }
 
     private void SelectByClicking(GameObject unit)
+{
+    // Skip Metal/Fuel objects
+    if (unit.CompareTag("Metal") || unit.CompareTag("Fuel"))
     {
-        DeselectAll();
-        unitsSelected.Add(unit);
-        SelectUnit(unit, true);
+        return; // Don't select the Metal/Fuel objects
     }
 
+    DeselectAll(); // Deselect any previously selected units
+    unitsSelected.Add(unit); // Add the clicked unit
+    SelectUnit(unit, true); // Select the unit
+}
+
     private void EnableUnitMovement(GameObject unit, bool shouldMove)
+{
+    var unitMovement = unit.GetComponent<UnitMovement>();
+    if (unitMovement != null)
     {
-        unit.GetComponent<UnitMovement>().enabled = shouldMove;
+        unitMovement.enabled = shouldMove;
     }
+}
+
 
     private void TriggerSelectionIndicator(GameObject unit, bool isVisable)
     {

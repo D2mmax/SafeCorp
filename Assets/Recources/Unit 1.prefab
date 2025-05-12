@@ -111,8 +111,10 @@ GameObject:
   - component: {fileID: 3280638110901197763}
   - component: {fileID: 1334623963781706039}
   - component: {fileID: 5410890717264384637}
+  - component: {fileID: 2223829591238631376}
   - component: {fileID: 5249586138132085629}
   - component: {fileID: 5231763221995964928}
+  - component: {fileID: 8147517821671459057}
   m_Layer: 6
   m_Name: Unit 1
   m_TagString: Unit
@@ -163,6 +165,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionManager: {fileID: 0}
   currentTarget: {fileID: 0}
+--- !u!114 &2223829591238631376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193587630631722418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2dd46b29233014eac69e89eec9fe49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &5249586138132085629
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -193,7 +207,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8193587630631722418}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.65
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -202,10 +216,27 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 3
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8147517821671459057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193587630631722418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9d57ebd0db8d94b9bbfb927c00222e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metalStoppingDistance: 3.5
+  fuelStoppingDistance: 3.5
+  normalStoppingDistance: 0.5
+  metalGatherRate: 1
+  fuelGatherRate: 1
 --- !u!1001 &8267306163361908250
 PrefabInstance:
   m_ObjectHideFlags: 0

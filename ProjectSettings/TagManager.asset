@@ -8,6 +8,9 @@ TagManager:
   - Recourse
   - Ground
   - Enemy
+  - VIP
+  - Fuel
+  - Metal
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Clickable
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
